@@ -3,4 +3,8 @@ project(Lab14 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Lab14 main.c)
+add_executable(Lab14 main.c
+        libs/data_structures/vector/vector.h
+        libs/data_structures/vector/vector.c)
+add_subdirectory(libs)
+target_link_libraries(data_structures)
