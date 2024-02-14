@@ -47,15 +47,17 @@ cmake_ninja_workdir = C$:/Users/Bogdan/CLionProjects/Lab14/cmake-build-debug/
 #############################################
 # Order-only phony target for Lab14
 
-build cmake_object_order_depends_target_Lab14: phony || CMakeFiles/Lab14.dir
+build cmake_object_order_depends_target_Lab14: phony || cmake_object_order_depends_target_data_structures
 
 build CMakeFiles/Lab14.dir/main.c.obj: C_COMPILER__Lab14_unscanned_Debug C$:/Users/Bogdan/CLionProjects/Lab14/main.c || cmake_object_order_depends_target_Lab14
+  DEFINES = -DNDEBUG
   DEP_FILE = CMakeFiles\Lab14.dir\main.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Lab14.dir
   OBJECT_FILE_DIR = CMakeFiles\Lab14.dir
 
 build CMakeFiles/Lab14.dir/libs/data_structures/vector/vector.c.obj: C_COMPILER__Lab14_unscanned_Debug C$:/Users/Bogdan/CLionProjects/Lab14/libs/data_structures/vector/vector.c || cmake_object_order_depends_target_Lab14
+  DEFINES = -DNDEBUG
   DEP_FILE = CMakeFiles\Lab14.dir\libs\data_structures\vector\vector.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Lab14.dir
@@ -69,9 +71,9 @@ build CMakeFiles/Lab14.dir/libs/data_structures/vector/vector.c.obj: C_COMPILER_
 #############################################
 # Link the executable Lab14.exe
 
-build Lab14.exe: C_EXECUTABLE_LINKER__Lab14_Debug CMakeFiles/Lab14.dir/main.c.obj CMakeFiles/Lab14.dir/libs/data_structures/vector/vector.c.obj
+build Lab14.exe: C_EXECUTABLE_LINKER__Lab14_Debug CMakeFiles/Lab14.dir/main.c.obj CMakeFiles/Lab14.dir/libs/data_structures/vector/vector.c.obj | libs/data_structures/libdata_structures.a || libs/data_structures/libdata_structures.a
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = libs/data_structures/libdata_structures.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Lab14.dir
   POST_BUILD = cd .
   PRE_LINK = cd .

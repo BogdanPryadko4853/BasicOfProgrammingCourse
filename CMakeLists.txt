@@ -6,5 +6,7 @@ set(CMAKE_C_STANDARD 11)
 add_executable(Lab14 main.c
         libs/data_structures/vector/vector.h
         libs/data_structures/vector/vector.c)
+
 add_subdirectory(libs)
-target_link_libraries(data_structures)
+target_link_libraries(Lab14 data_structures)
+target_compile_definitions(Lab14 PRIVATE -DNDEBUG)

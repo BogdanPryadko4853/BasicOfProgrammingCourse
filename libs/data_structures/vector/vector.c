@@ -80,3 +80,27 @@ void popBack(vector* v) {
     v->size--;
 }
 
+int* atVector(vector* v, size_t index) {
+    if (index >= v->size) {
+        fprintf(stderr, "Index out of range.\n");
+        exit(1);
+    }
+    return &(v->data[index]);
+}
+
+int* back(vector* v) {
+    if (isEmpty(v)) {
+        fprintf(stderr, "Vector is empty.\n");
+        exit(1);
+    }
+    return &(v->data[v->size - 1]);
+}
+
+int* front(vector* v) {
+    if (isEmpty(v)) {
+        fprintf(stderr, "Vector is empty.\n");
+        exit(1);
+    }
+    return &(v->data[0]);
+}
+
