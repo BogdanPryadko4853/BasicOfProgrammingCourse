@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include "libs/data_structures/vector/vector.h"
+#include "libs/data_structures/vector/vectorVoid.h"
 
 vector v;
 
@@ -83,9 +84,18 @@ void test(vector* v) {
 }
 
 int main() {
-    v = createVector(5);
-    test(&v);
-    pushBack(&v, 5);
-    test(&v);
+    size_t n;
+    scanf("%zd", &n);
+    vectorVoid v = createVectorV(0, sizeof(int));
+    for (int i = 0; i < n; i++) {
+        int x;
+        scanf("%d", &x);
+        pushBackV(&v, &x);
+    }
+    for (int i = 0; i < n; i++) {
+        int x;
+        getVectorValueV(&v, i, &x);
+        printf("%d ", x);
+    }
     return 0;
 }

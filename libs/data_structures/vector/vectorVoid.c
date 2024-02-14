@@ -42,3 +42,48 @@ void deleteVectorV(vectorVoid *v) {
     v->size = 0;
     v->capacity = 0;
 }
+
+bool isEmptyV(vectorVoid *v) {
+    return v->size == 0;
+}
+
+bool isFullV(vectorVoid *v) {
+    return v->size == v->capacity;
+}
+
+void getVectorValueV(vectorVoid *v, size_t index, void *destination) {
+    if (index < v->size) {
+        char *src = (char *)v->data + index * v->baseTypeSize;
+        memcpy(destination, src, v->baseTypeSize);
+    }
+}
+void setVectorValueV(vectorVoid *v, size_t index, void *source) {
+    if (index < v->size) {
+        void *dest = (char *)v->data + index * v->baseTypeSize;
+        memcpy(dest, source, v->baseTypeSize);
+    }
+}
+
+void popBackV(vectorVoid *v) {
+    if (v->size > 0) {
+        v->size--;
+    }
+}
+
+void pushBackV(vectorVoid *v, void *source) {
+    if (v->size == v->capacity) {
+        size_t newCapacity = v->capacity * 2;
+        void *newData = realloc(v->data, newCapacity * v->baseTypeSize);
+        if (newData) {
+            v->data = newData;
+            v->capacity = newCapacity;
+        } else {
+            // Ошибка перевыделения памяти
+            return;
+        }
+    }
+
+    void *dest = (char *)v->data + v->size * v->baseTypeSize;
+    memcpy(dest, source, v->baseTypeSize);
+    v->size++;
+}
