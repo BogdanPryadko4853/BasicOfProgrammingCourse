@@ -22,8 +22,6 @@ void test_popBack_notEmptyVector() {
     assert(v.capacity == 1);
 }
 
-
-
 void test_atVector_notEmptyVector() {
     vector v;
     int data[] = {1, 2, 3, 4, 5};
