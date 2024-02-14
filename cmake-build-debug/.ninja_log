@@ -2,3 +2,8 @@
 2	72	7296175628151400	CMakeFiles/Lab14.dir/main.c.obj	f0df4a3a8fa80d48
 85	166	7296177291897598	Lab14.exe	84990bca9dcf46c3
 3	85	7296177291141451	CMakeFiles/Lab14.dir/libs/data_structures/vector/vector.c.obj	313d5d080db43eb
+20	172	7296216762444647	libs/data_structures/CMakeFiles/data_structures.dir/vector/vectorVoid.c.obj	f70cd0bba2287961
+11	180	7296216762494408	CMakeFiles/Lab14.dir/main.c.obj	e906c3db03d8b835
+3	182	7296216762536290	CMakeFiles/Lab14.dir/libs/data_structures/vector/vector.c.obj	c397ee519dac3fc9
+173	243	7296216763178836	libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.obj	5b02ba81ce7d1e51
+243	321	7296216763946672	libs/data_structures/libdata_structures.a	6f9b89ff07684cea
